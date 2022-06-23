@@ -25,6 +25,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
+      - run: npm install -g gatsby-cli
       - run: npm run build # 빌드 스크립트
 
       - name: Deploy
