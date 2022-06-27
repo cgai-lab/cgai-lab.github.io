@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Box from '@components/Box';
 import Layout from '@components/Layout';
 import Seo from '@components/Seo';
 import { Button, Container, useTheme } from '@mui/material';
@@ -9,9 +8,9 @@ import { Button, Container, useTheme } from '@mui/material';
 const IndexPage = () => {
   console.log(useTheme());
   return (
-    <Container>
+    <Layout>
       <Button variant="contained">hi</Button>
-    </Container>
+    </Layout>
   );
 };
 

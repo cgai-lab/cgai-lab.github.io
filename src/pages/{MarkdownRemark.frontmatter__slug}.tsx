@@ -1,8 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Box from '@components/Box';
-
 interface PropsType {
   data: {
     markdownRemark: {
@@ -23,7 +21,6 @@ export default function Template({
   return (
     <div className="blog-post-container">
       <div className="blog-post">
-        <Box />
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
         <div
