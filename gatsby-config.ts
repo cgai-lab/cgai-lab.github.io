@@ -10,10 +10,13 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    'gatsby-plugin-mui-emotion',
+    'gatsby-plugin-top-layout',
     'gatsby-plugin-image',
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
     `gatsby-plugin-tsconfig-paths`,
     {
       resolve: 'gatsby-source-filesystem',
@@ -27,11 +30,18 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'markdown-pages',
-        path: `${__dirname}/src/markdown-pages`,
+        path: `${__dirname}/markdown-pages`,
       },
       __key: 'pages',
     },
     `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Montserrat:100,300,400,500,700,900`],
+        display: 'swap',
+      },
+    },
   ],
 };
 
