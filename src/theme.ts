@@ -4,7 +4,7 @@ import { createTheme } from '@mui/material/styles';
 // A custom theme for this app
 const theme = createTheme({
   typography: {
-    fontFamily: ['Montserrat', 'sans-serif', 'Roboto,'].join(','),
+    fontFamily: ['Montserrat', 'sans-serif', 'Roboto'].join(','),
   },
   palette: {
     primary: {
