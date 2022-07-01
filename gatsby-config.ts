@@ -1,4 +1,9 @@
 import type { GatsbyConfig } from 'gatsby';
+import dotenv from 'dotenv';
+
+dotenv.config({
+  path: `.env`,
+});
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -40,6 +45,13 @@ const config: GatsbyConfig = {
       options: {
         fonts: [`Montserrat:100,300,400,500,700,900`],
         display: 'swap',
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `30hhxg6atzue`,
+        accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],
