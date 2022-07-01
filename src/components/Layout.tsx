@@ -1,3 +1,5 @@
+import styled from '@emotion/styled';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Box,
@@ -6,10 +8,9 @@ import {
   List,
   Toolbar,
 } from '@mui/material';
-import React, { useState } from 'react';
-import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState } from 'react';
+
 import Logo from './Logo';
 
 const pages: string[] = [
@@ -31,19 +32,30 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" color="default" elevation={0}>
-          <Toolbar disableGutters color="default">
+        <AppBar
+          position="static"
+          color="default"
+          elevation={0}
+          sx={{ position: 'relative' }}
+        >
+          <Toolbar disableGutters color="default" sx={{ padding: '30px 50px' }}>
             <Logo />
-            <Box sx={{ flexGrow: 99 }} />
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1 }} />
+            <Box sx={{ display: { sm: 'none', md: 'flex' } }}>
               {pages.map((page) => (
                 <NavButton key={page} to={`/${page}`}>
                   {page}
                 </NavButton>
               ))}
             </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton color="inherit" edge="end" onClick={handleClick}>
+            <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
+              <IconButton
+                color="inherit"
+                aria-label="add"
+                edge="end"
+                onClick={handleClick}
+                sx={{ px: '0' }}
+              >
                 <MenuIcon />
               </IconButton>
             </Box>
@@ -70,12 +82,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </CustomMenu>
         </AppBar>
       </Box>
-      <Box>{children}</Box>
+
+      <ContentContainer px={3}>{children}</ContentContainer>
     </>
   );
 };
 
 const CustomMenu = styled(Collapse)``;
+
+const ContentContainer = styled(Box)``;
 
 const NavButton = styled(Link)`
   color: #222222;

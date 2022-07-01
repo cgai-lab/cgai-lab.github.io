@@ -1,5 +1,5 @@
-import type { GatsbyConfig } from 'gatsby';
 import dotenv from 'dotenv';
+import type { GatsbyConfig } from 'gatsby';
 
 dotenv.config({
   path: `.env`,
@@ -35,7 +35,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'markdown-pages',
-        path: `${__dirname}/markdown-pages`,
+        path: `./markdown-pages`,
       },
       __key: 'pages',
     },
