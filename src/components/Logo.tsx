@@ -10,6 +10,7 @@ const LogoContainer = styled(Link)`
   text-decoration: none;
   color: #000000;
   font-weight: 700;
+  font-size: 1.6rem;
 `;
 
 export default Logo;

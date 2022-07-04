@@ -5,7 +5,7 @@ export interface PersonType {
     endDate: string;
     id: string;
     image: {
-      publicUrl: string;
+      url: string;
       title: string;
     };
     name: string;

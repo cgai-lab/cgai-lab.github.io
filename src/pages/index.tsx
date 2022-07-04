@@ -4,16 +4,15 @@ import React from 'react';
 import Layout from '@components/Layout';
 import Seo from '@components/Seo';
 import TopSection from '@components/TopSection';
+import MainSlide from '@components/main/MainSlide';
 
 // markup
 const IndexPage = () => {
   return (
     <Layout>
-      <TopSection title="Home" />
-      <Typography>
-        1231231231sadfasfasdfasdfsadfasdfasdfasdfasdfasdfasdf
-      </Typography>
-      <Button variant="contained">123123123123</Button>
+      <Container>
+        <MainSlide />
+      </Container>
     </Layout>
   );
 };

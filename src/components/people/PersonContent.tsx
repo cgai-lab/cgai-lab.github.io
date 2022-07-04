@@ -1,31 +1,48 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Grid, Box, Typography } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActionArea,
+} from '@mui/material';
 import { PersonType } from '@types/graph';
+import { Link } from 'gatsby';
 
-const PersonContent = ({
-  node: {
-    name,
-    image: { publicUrl },
-    course,
-  },
-}: PersonType) => {
+const PersonContent = ({ node: { name, image, course, url } }: PersonType) => {
+  // TODO external and internal linking
+
   return (
-    <PersonContentContainer item xs={12} sm={6} md={4}>
-      <Box
-        mb={5}
-        component="img"
+    <PersonContentContainer item xs={12} sm={6} md={6} lg={4}>
+      <Card
         sx={{
-          content: `url(${publicUrl})`,
-          width: '100%',
-          // height: { xs: 300, sm: 420 },
-          objectFit: 'contain',
+          maxWidth: 420,
+          border: 'none',
+          boxShadow: 'none',
+          borderRadius: 0,
         }}
-      />
-      <Box className="content">
-        <Typography className="name">{name}</Typography>
-        <Typography className="course">{course}</Typography>
-      </Box>
+      >
+        <CardActionArea component={Link} href={url ? url : ''}>
+          <CardMedia
+            alt={image.title}
+            component="img"
+            image={image.url}
+            sx={{
+              marginBottom: 5,
+              borderRadius: 0,
+              objectFit: 'auto',
+              height: { xs: 300, sm: 420 },
+            }}
+          />
+          <CardContent className="content">
+            <Typography className="name">{name}</Typography>
+            <Typography className="course">{course}</Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </PersonContentContainer>
   );
 };

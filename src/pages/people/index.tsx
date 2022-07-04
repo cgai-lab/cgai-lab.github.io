@@ -13,10 +13,8 @@ const PeoplePage = ({
   },
 }: PersonsType) => {
   const professor = edges.filter((person) => person.node.type === 'professor');
-  const student = edges.filter((person) => person.node.type === 'student')[0];
-  const students = Array(9)
-    .fill(1)
-    .map(() => ({ ...student }));
+  const students = edges.filter((person) => person.node.type === 'student');
+  const alumnis = edges.filter((person) => person.node.type === 'alumni');
 
   return (
     <Layout>
@@ -26,7 +24,7 @@ const PeoplePage = ({
         <PeopleSection title="Students" />
         <PeopleContainer people={students} />
         <PeopleSection title="Alumni" />
-        <PeopleContainer people={students} />
+        <PeopleContainer people={alumnis} />
       </Container>
     </Layout>
   );
@@ -39,7 +37,7 @@ export const data = graphql`
         node {
           id
           image {
-            publicUrl
+            url
             title
           }
           course

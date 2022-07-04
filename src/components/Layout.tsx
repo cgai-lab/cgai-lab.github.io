@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
+import Footer from './Footer';
 
 import Logo from './Logo';
 
@@ -44,15 +45,23 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             sx={{ padding: '30px 50px' }}
           >
             <Logo />
-            <Box sx={{ flexGrow: 1 }} />
-            <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 10 }} />
+            <Box
+              sx={{
+                display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' },
+              }}
+            >
               {pages.map((page) => (
                 <NavButton key={page} to={`/${page}`}>
                   {page}
                 </NavButton>
               ))}
             </Box>
-            <Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }}>
+            <Box
+              sx={{
+                display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'none' },
+              }}
+            >
               <IconButton
                 color="inherit"
                 aria-label="add"
@@ -73,7 +82,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               display: {
                 xs: 'display',
                 sm: 'display',
-                md: 'none',
+                md: 'display',
+                lg: 'none',
               },
             }}
           >
@@ -89,6 +99,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </Box>
 
       <ContentContainer px={3}>{children}</ContentContainer>
+      <Footer />
     </>
   );
 };
