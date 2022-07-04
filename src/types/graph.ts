@@ -11,7 +11,7 @@ export interface PersonType {
     name: string;
     startDate: string;
     type: string;
-    url?: string;
+    personalUrl?: string;
   };
 }
 

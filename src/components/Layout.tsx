@@ -104,13 +104,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   );
 };
 
-const CustomMenu = styled(Collapse)``;
+const CustomMenu = styled(Collapse)`
+  position: absolute;
+  background-color: #fff;
+  z-index: 99;
+  top: 124px;
+  width: 100%;
+`;
 
 const ContentContainer = styled(Box)``;
 
 const NavButton = styled(Link)`
   color: #222222;
-  padding: 15px 20px;
+  padding: 9px 20px;
   opacity: 0.6;
   font-size: 12px;
   line-height: 20px;
@@ -136,8 +142,8 @@ const NavButton = styled(Link)`
 
 const BottomButton = styled(Link)`
   margin-left: 0px;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   opacity: 0.6;
   font-size: 12px;
   line-height: 20px;
@@ -151,6 +157,16 @@ const BottomButton = styled(Link)`
   position: relative;
   vertical-align: top;
   color: #222222;
+
+  :hover {
+    opacity: 0.9;
+    background-color: #eef0f3;
+  }
+  :activate {
+    color: #43464d;
+    opacity: 0.8;
+    font-weight: 600;
+  }
 `;
 
 export default Layout;

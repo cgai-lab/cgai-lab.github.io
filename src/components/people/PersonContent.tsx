@@ -12,7 +12,9 @@ import {
 import { PersonType } from '@types/graph';
 import { Link } from 'gatsby';
 
-const PersonContent = ({ node: { name, image, course, url } }: PersonType) => {
+const PersonContent = ({
+  node: { name, image, course, personalUrl },
+}: PersonType) => {
   // TODO external and internal linking
 
   return (
@@ -25,7 +27,7 @@ const PersonContent = ({ node: { name, image, course, url } }: PersonType) => {
           borderRadius: 0,
         }}
       >
-        <CardActionArea component={Link} href={url ? url : ''}>
+        <CardActionArea component={Link} href={personalUrl ? personalUrl : ''}>
           <CardMedia
             alt={image.title}
             component="img"

@@ -36,17 +36,14 @@ export const data = graphql`
       edges {
         node {
           id
+          personalUrl
           image {
             url
             title
           }
           course
-          description
-          endDate
           name
-          startDate
           type
-          url
         }
       }
     }
