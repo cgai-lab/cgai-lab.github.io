@@ -110,7 +110,7 @@ const ContentContainer = styled(Box)``;
 
 const NavButton = styled(Link)`
   color: #222222;
-  padding: 9px 20px;
+  padding: 15px 20px;
   opacity: 0.6;
   font-size: 12px;
   line-height: 20px;
