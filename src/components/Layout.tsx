@@ -34,11 +34,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar
           position="static"
-          color="default"
+          color="transparent"
           elevation={0}
           sx={{ position: 'relative' }}
         >
-          <Toolbar disableGutters color="default" sx={{ padding: '30px 50px' }}>
+          <Toolbar
+            disableGutters
+            color="transparent"
+            sx={{ padding: '30px 50px' }}
+          >
             <Logo />
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
