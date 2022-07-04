@@ -41,14 +41,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <Toolbar disableGutters color="default" sx={{ padding: '30px 50px' }}>
             <Logo />
             <Box sx={{ flexGrow: 1 }} />
-            <Box sx={{ display: { sm: 'none', md: 'flex' } }}>
+            <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
               {pages.map((page) => (
                 <NavButton key={page} to={`/${page}`}>
                   {page}
                 </NavButton>
               ))}
             </Box>
-            <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
+            <Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }}>
               <IconButton
                 color="inherit"
                 aria-label="add"
@@ -68,6 +68,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             sx={{
               display: {
                 xs: 'display',
+                sm: 'display',
                 md: 'none',
               },
             }}
