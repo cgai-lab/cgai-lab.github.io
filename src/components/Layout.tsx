@@ -108,7 +108,7 @@ const CustomMenu = styled(Collapse)`
   position: absolute;
   background-color: #fff;
   z-index: 99;
-  top: 124px;
+  top: 100px;
   width: 100%;
 `;
 
