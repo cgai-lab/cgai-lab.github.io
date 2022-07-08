@@ -17,7 +17,7 @@ const NewsItem = (board: BoardType) => {
       <Card style={{ border: 'none', boxShadow: 'none' }}>
         <CardActionArea component={Link} to={board.slug}>
           <CardHeader
-            title={board.title + board.slug}
+            title={board.title}
             subheader={new Date(board.createdAt).toDateString()}
           />
           <CardMedia component="img" height={500} image={board.thumbnail.url} />

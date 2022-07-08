@@ -1,4 +1,5 @@
 import Layout from '@components/Layout';
+import styled from '@emotion/styled';
 import {
   Avatar,
   Box,
@@ -53,7 +54,7 @@ const BoardPage = ({
 
           <Divider />
 
-          <Box
+          <MarkdownHtmlInDiv
             py={2}
             component="div"
             dangerouslySetInnerHTML={{
@@ -65,6 +66,12 @@ const BoardPage = ({
     </Layout>
   );
 };
+
+const MarkdownHtmlInDiv = styled(Box)`
+  img {
+    max-width: 100%;
+  }
+`;
 
 export const data = graphql`
   query ($slug: String!) {
