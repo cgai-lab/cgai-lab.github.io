@@ -6,11 +6,14 @@ import {
   CardHeader,
   CardMedia,
   ListItem,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import { Link } from 'gatsby';
 
 const NewsItem = (board: BoardType) => {
-  console.log(board.slug);
+  const theme = useTheme();
+  const lg = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
     <ListItem sx={{ display: 'inline-block' }}>
@@ -20,7 +23,11 @@ const NewsItem = (board: BoardType) => {
             title={board.title}
             subheader={new Date(board.createdAt).toDateString()}
           />
-          <CardMedia component="img" height={500} image={board.thumbnail.url} />
+          <CardMedia
+            component="img"
+            height={lg ? 500 : 200}
+            image={board.thumbnail.url}
+          />
         </CardActionArea>
       </Card>
     </ListItem>

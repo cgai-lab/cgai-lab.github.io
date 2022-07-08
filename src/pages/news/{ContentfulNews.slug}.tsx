@@ -49,7 +49,9 @@ const BoardPage = ({
               </Typography>
             </Box>
 
-            <Typography variant="subtitle2">{createdAt}</Typography>
+            <Typography variant="subtitle2">
+              {new Date(createdAt).toDateString()}
+            </Typography>
           </Breadcrumbs>
 
           <Divider />
