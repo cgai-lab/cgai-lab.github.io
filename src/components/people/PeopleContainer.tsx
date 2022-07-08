@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import { PersonType } from '@types/graph';
+import { PersonType } from '@types/data';
 import React from 'react';
 import PersonContent from './PersonContent';
 

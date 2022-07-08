@@ -9,7 +9,7 @@ import {
   CardContent,
   CardActionArea,
 } from '@mui/material';
-import { PersonType } from '@types/graph';
+import { PersonType } from '@types/data';
 import { Link } from 'gatsby';
 
 const PersonContent = ({

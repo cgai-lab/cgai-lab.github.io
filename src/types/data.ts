@@ -22,3 +22,26 @@ export interface PersonsType {
     };
   };
 }
+
+export interface BoardType {
+  id: string;
+  content: {
+    childMarkdownRemark: {
+      html: string;
+    };
+  };
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  thumbnail: {
+    url: string;
+  };
+}
+
+export interface NewsType {
+  data: {
+    allContentfulNews: {
+      nodes: BoardType[];
+    };
+  };
+}

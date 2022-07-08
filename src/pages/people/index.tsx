@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '@components/Layout';
 import PeopleSection from '@components/people/PeopleSection';
 import PeopleContainer from '@components/people/PeopleContainer';
-import { PersonsType } from '@types/graph';
+import { PersonsType } from '@types/data';
 import { graphql } from 'gatsby';
 import { Container } from '@mui/material';
 
