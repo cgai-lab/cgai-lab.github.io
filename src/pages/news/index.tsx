@@ -8,10 +8,10 @@ import { Container, List } from '@mui/material';
 import NewsItem from '@components/news/NewsItem';
 
 function NewsPage({ data }: NewsType) {
-  const boards = data.allContentfulNews.nodes;
+  const boards = data.news.nodes;
   return (
     <Layout>
-      <TopSection title="News" />
+      {/* <TopSection title="News" /> */}
       <Container>
         <List>
           {boards.map((item) => (
@@ -25,12 +25,13 @@ function NewsPage({ data }: NewsType) {
 
 export const data = graphql`
   query {
-    allContentfulNews(sort: { fields: createdAt }) {
+    news: allContentfulNews(sort: { fields: createdAt }) {
       nodes {
         id
         title
-        updatedAt
-        createdAt
+        slug
+        updatedAt(formatString: "YYYY-MM-DD")
+        createdAt(formatString: "YYYY-MM-DD")
         thumbnail {
           url
         }

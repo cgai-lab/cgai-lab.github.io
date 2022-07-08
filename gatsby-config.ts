@@ -31,14 +31,6 @@ const config: GatsbyConfig = {
       },
       __key: 'images',
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'markdown-pages',
-        path: `./markdown-pages`,
-      },
-      __key: 'pages',
-    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-google-fonts`,

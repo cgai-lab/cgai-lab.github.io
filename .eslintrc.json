@@ -20,5 +20,5 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {},
-  "ignorePatterns": ["public/", "node_modules/"]
+  "ignorePatterns": ["public/", "node_modules/", "./gatsby-node.ts"]
 }

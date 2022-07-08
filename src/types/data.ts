@@ -30,6 +30,7 @@ export interface BoardType {
       html: string;
     };
   };
+  slug: string;
   title: string;
   createdAt: string;
   updatedAt: string;
@@ -40,7 +41,7 @@ export interface BoardType {
 
 export interface NewsType {
   data: {
-    allContentfulNews: {
+    news: {
       nodes: BoardType[];
     };
   };
