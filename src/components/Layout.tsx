@@ -32,7 +32,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, boxShadow: 0 }}>
         <AppBar
           position="static"
           color="transparent"
@@ -98,7 +98,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </AppBar>
       </Box>
 
-      <ContentContainer px={3}>{children}</ContentContainer>
+      <ContentContainer px={3} py={1}>
+        {children}
+      </ContentContainer>
       <Footer />
     </>
   );

@@ -1,8 +1,10 @@
 import { BoardType } from '@types/data';
 import React from 'react';
 import {
+  Box,
   Card,
   CardActionArea,
+  CardContent,
   CardHeader,
   CardMedia,
   ListItem,
@@ -17,19 +19,23 @@ const NewsItem = (board: BoardType) => {
 
   return (
     <ListItem sx={{ display: 'inline-block' }}>
-      <Card style={{ border: 'none', boxShadow: 'none' }}>
-        <CardActionArea component={Link} to={board.slug}>
-          <CardHeader
-            title={board.title}
-            subheader={new Date(board.createdAt).toDateString()}
-          />
-          <CardMedia
-            component="img"
-            height={lg ? 500 : 200}
-            image={board.thumbnail.url}
-          />
-        </CardActionArea>
-      </Card>
+      <Box sx={{ boxShadow: 4, borderRadius: 1 }}>
+        <Card style={{ border: 'none', boxShadow: 'none' }}>
+          <CardActionArea component={Link} to={board.slug}>
+            <CardHeader
+              title={board.title}
+              subheader={new Date(board.createdAt).toDateString()}
+            />
+            <CardContent sx={{ padding: 0 }}>
+              <CardMedia
+                component="img"
+                height={lg ? 500 : 200}
+                image={board.thumbnail.url}
+              />
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </Box>
     </ListItem>
   );
 };

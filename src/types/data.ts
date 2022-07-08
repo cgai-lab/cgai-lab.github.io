@@ -53,3 +53,23 @@ export interface NewsType {
     };
   };
 }
+
+export interface PaperType {
+  id: string;
+  date: string;
+  title: string;
+  type: string;
+  createdAt: string;
+  page: string;
+  option: string;
+  url: string;
+  withPerson: string[];
+}
+
+export interface PaperListType {
+  data: {
+    paperList: {
+      nodes: PaperType[];
+    };
+  };
+}

@@ -16,7 +16,6 @@ const PersonContent = ({
   node: { name, image, course, personalUrl },
 }: PersonType) => {
   // TODO external and internal linking
-
   return (
     <PersonContentContainer item xs={12} sm={6} md={6} lg={4}>
       <Card
@@ -27,7 +26,7 @@ const PersonContent = ({
           borderRadius: 0,
         }}
       >
-        <CardActionArea component={Link} href={personalUrl ? personalUrl : ''}>
+        <CardActionArea component={Link} to={personalUrl ? personalUrl : ''}>
           <CardMedia
             alt={image.title}
             component="img"
