@@ -37,6 +37,13 @@ export interface BoardType {
   thumbnail: {
     url: string;
   };
+  writer: {
+    name: string;
+    personalUrl: string;
+    image: {
+      url: string;
+    };
+  };
 }
 
 export interface NewsType {

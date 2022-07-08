@@ -1,5 +1,12 @@
 import Layout from '@components/Layout';
-import { Container, Typography } from '@mui/material';
+import {
+  Avatar,
+  Box,
+  Breadcrumbs,
+  Container,
+  Divider,
+  Typography,
+} from '@mui/material';
 import { BoardType } from '@types/data';
 import { graphql } from 'gatsby';
 import React from 'react';
@@ -12,18 +19,48 @@ interface IProps {
 
 const BoardPage = ({
   data: {
-    contentfulNews: { id, title, createdAt, content, thumbnail },
+    contentfulNews: { id, title, createdAt, content, thumbnail, writer },
   },
 }: IProps) => {
   return (
     <Layout>
       <Container>
-        <Typography variant="h2">{title}</Typography>
+        <Box p={2}>
+          <Typography variant="h4" py={1}>
+            {title}
+          </Typography>
 
-        <img src={thumbnail.url} />
-        <div
-          dangerouslySetInnerHTML={{ __html: content.childMarkdownRemark.html }}
-        />
+          <Breadcrumbs aria-label="breadcrumb">
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                textDecoration: 'none',
+              }}
+              component="a"
+              my={2}
+              href={writer.personalUrl}
+            >
+              <Avatar src={writer.image.url} />
+
+              <Typography variant="subtitle2" pl={1}>
+                {writer.name}
+              </Typography>
+            </Box>
+
+            <Typography variant="subtitle2">{createdAt}</Typography>
+          </Breadcrumbs>
+
+          <Divider />
+
+          <Box
+            py={2}
+            component="div"
+            dangerouslySetInnerHTML={{
+              __html: content.childMarkdownRemark.html,
+            }}
+          />
+        </Box>
       </Container>
     </Layout>
   );
@@ -44,6 +81,13 @@ export const data = graphql`
       }
       thumbnail {
         url
+      }
+      writer {
+        name
+        personalUrl
+        image {
+          url
+        }
       }
     }
   }

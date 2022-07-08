@@ -25,7 +25,7 @@ function NewsPage({ data }: NewsType) {
 
 export const data = graphql`
   query {
-    news: allContentfulNews(sort: { fields: createdAt }) {
+    news: allContentfulNews(sort: { fields: createdAt, order: DESC }) {
       nodes {
         id
         title
