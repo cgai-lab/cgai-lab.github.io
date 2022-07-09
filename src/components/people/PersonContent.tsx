@@ -26,7 +26,15 @@ const PersonContent = ({
           borderRadius: 0,
         }}
       >
-        <CardActionArea component={Link} to={personalUrl ? personalUrl : ''}>
+        <CardActionArea
+          component={Link}
+          to={personalUrl ? personalUrl : ''}
+          sx={{
+            ':hover': {
+              boxShadow: 2,
+            },
+          }}
+        >
           <CardMedia
             alt={image.title}
             component="img"

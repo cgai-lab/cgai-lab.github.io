@@ -8,5 +8,10 @@ export const generateColor = (str: string) => {
     const value = (hash >> (i * 8)) & 0xff;
     colour += ('00' + value.toString(16)).substr(-2);
   }
+  // const tmp =
+  //   parseInt(colour.slice(1, 3), 16) +
+  //   parseInt(colour.slice(3, 5), 16) +
+  //   parseInt(colour.slice(5, 7), 16);
+  // return { bgcolor: colour, color: tmp > 382 ? '#000000' : '#ffffff' };
   return colour;
 };

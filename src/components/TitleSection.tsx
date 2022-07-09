@@ -1,10 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const Section = ({ title }: { title: string }) => {
+const Section = ({
+  title,
+  subTitle = 'PEOPLE',
+}: {
+  title: string;
+  subTitle?: string;
+}) => {
   return (
     <SectionContainer>
-      <div className="sectionDiv">PEOPLE</div>
+      <div className="sectionDiv">{subTitle}</div>
       <h2 className="sectionH2">{title}</h2>
     </SectionContainer>
   );

@@ -15,6 +15,7 @@ const TypeBadge = ({ item }: IProps) => {
         mixBlendMode: 'difference',
         marginY: 1,
         cursor: 'pointer',
+        // ...generateColor(item),
       }}
     />
   );

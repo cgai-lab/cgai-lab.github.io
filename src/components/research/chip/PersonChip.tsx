@@ -16,6 +16,7 @@ const PersonChip = ({ item }: IProps) => {
         marginRight: 1,
         marginY: 1,
         cursor: 'pointer',
+        // ...generateColor(item),
       }}
     />
   );

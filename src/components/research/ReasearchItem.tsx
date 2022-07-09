@@ -27,7 +27,7 @@ const ResearchItem = ({
     <ListItem sx={{ display: 'inline-block' }}>
       <Box sx={{ boxShadow: 4, borderRadius: 1 }}>
         <Card style={{ border: 'none', boxShadow: 'none' }}>
-          <CardActionArea component={Link} to={url}>
+          <CardActionArea component={Link} to={url ? url : ''}>
             <CardHeader
               title={<Typography variant="h6">{title}</Typography>}
               subheader={
@@ -45,7 +45,6 @@ const ResearchItem = ({
                 </Breadcrumbs>
               }
             />
-            {/* <CardContent /> */}
           </CardActionArea>
         </Card>
       </Box>

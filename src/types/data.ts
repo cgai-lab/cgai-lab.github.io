@@ -60,9 +60,9 @@ export interface PaperType {
   title: string;
   type: string;
   createdAt: string;
-  page: string;
+  page?: string;
   option: string;
-  url: string;
+  url?: string;
   withPerson: string[];
 }
 
@@ -70,6 +70,24 @@ export interface PaperListType {
   data: {
     paperList: {
       nodes: PaperType[];
+    };
+  };
+}
+
+export interface ProjectType {
+  id: string;
+  title: string;
+  startDate: string;
+  endDate: string;
+  option: string[];
+}
+
+export interface ProjectListType {
+  data: {
+    projectList: {
+      edges: {
+        node: ProjectType;
+      }[];
     };
   };
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from '@components/Layout';
-import PeopleSection from '@components/people/PeopleSection';
+import TitleSection from '@components/TitleSection';
 import PeopleContainer from '@components/people/PeopleContainer';
 import { PersonsType } from '@types/data';
 import { graphql } from 'gatsby';
@@ -19,11 +19,11 @@ const PeoplePage = ({
   return (
     <Layout>
       <Container>
-        <PeopleSection title="Faculty" />
+        <TitleSection title="Faculty" />
         <PeopleContainer people={professor} />
-        <PeopleSection title="Students" />
+        <TitleSection title="Students" />
         <PeopleContainer people={students} />
-        <PeopleSection title="Alumni" />
+        <TitleSection title="Alumni" />
         <PeopleContainer people={alumnis} />
       </Container>
     </Layout>
