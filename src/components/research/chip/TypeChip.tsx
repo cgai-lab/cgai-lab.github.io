@@ -6,17 +6,18 @@ type IProps = {
   item: string;
 };
 
-const PersonChip = ({ item }: IProps) => {
+const TypeBadge = ({ item }: IProps) => {
   return (
     <Chip
       label={item}
       sx={{
         bgcolor: generateColor(item),
         mixBlendMode: 'difference',
-        marginRight: 1,
+        marginY: 1,
+        cursor: 'pointer',
       }}
     />
   );
 };
 
-export default PersonChip;
+export default TypeBadge;

@@ -32,7 +32,7 @@ const PeoplePage = ({
 
 export const data = graphql`
   query {
-    allContentfulPerson {
+    allContentfulPerson(sort: { fields: course, order: DESC }) {
       edges {
         node {
           id

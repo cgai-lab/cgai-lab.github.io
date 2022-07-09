@@ -11,8 +11,8 @@ import {
 import { PaperType } from '@types/data';
 import { Link } from 'gatsby';
 import React from 'react';
-import PersonChip from './badge/PersonChip';
-import TypeChip from './badge/TypeChip';
+import PersonChip from './chip/PersonChip';
+import TypeChip from './chip/TypeChip';
 
 const ResearchItem = ({
   title,
@@ -34,9 +34,10 @@ const ResearchItem = ({
                 <Breadcrumbs aria-label="breadcrum">
                   <TypeChip item={type} />
                   <Box>
-                    {withPerson.map((item) => (
-                      <PersonChip key={item} item={item} />
-                    ))}
+                    {withPerson &&
+                      withPerson.map((item) => (
+                        <PersonChip key={item} item={item} />
+                      ))}
                   </Box>
                   <Typography>{date}</Typography>
                   <Typography>{option}</Typography>
