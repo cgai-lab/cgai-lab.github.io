@@ -60,8 +60,7 @@ export interface PaperType {
   title: string;
   type: string;
   createdAt: string;
-  page?: string;
-  option: string;
+  option?: string[];
   url?: string;
   withPerson: string[];
 }
@@ -69,7 +68,9 @@ export interface PaperType {
 export interface PaperListType {
   data: {
     paperList: {
-      nodes: PaperType[];
+      edges: {
+        node: PaperType;
+      }[];
     };
   };
 }

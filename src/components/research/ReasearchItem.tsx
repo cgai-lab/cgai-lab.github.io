@@ -3,7 +3,6 @@ import {
   Breadcrumbs,
   Card,
   CardActionArea,
-  CardContent,
   CardHeader,
   ListItem,
   Typography,
@@ -19,7 +18,6 @@ const ResearchItem = ({
   date,
   type,
   option,
-  page,
   url,
   withPerson,
 }: PaperType) => {
@@ -27,7 +25,7 @@ const ResearchItem = ({
     <ListItem sx={{ display: 'inline-block' }}>
       <Box sx={{ boxShadow: 4, borderRadius: 1 }}>
         <Card style={{ border: 'none', boxShadow: 'none' }}>
-          <CardActionArea component={Link} to={url ? url : ''}>
+          <CardActionArea component={url ? Link : 'div'} to={url ? url : ''}>
             <CardHeader
               title={<Typography variant="h6">{title}</Typography>}
               subheader={
@@ -40,8 +38,10 @@ const ResearchItem = ({
                       ))}
                   </Box>
                   <Typography>{date}</Typography>
-                  <Typography>{option}</Typography>
-                  <Typography>{page}</Typography>
+                  {option &&
+                    option.map((item) => (
+                      <Typography key={item}>{item}</Typography>
+                    ))}
                 </Breadcrumbs>
               }
             />
