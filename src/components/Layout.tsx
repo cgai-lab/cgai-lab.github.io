@@ -98,7 +98,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </AppBar>
       </Box>
 
-      <ContentContainer px={3} py={1}>
+      <ContentContainer px={3} py={5}>
         {children}
       </ContentContainer>
       <Footer />
