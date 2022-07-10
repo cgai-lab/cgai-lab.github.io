@@ -92,3 +92,23 @@ export interface ProjectListType {
     };
   };
 }
+
+export interface MainIntroType {
+  id: string;
+  title: string;
+  content: string;
+  type: boolean;
+  img: {
+    url: string;
+  };
+}
+
+export interface MainIntroListType {
+  data: {
+    mainIntroList: {
+      edges: {
+        node: MainIntroType;
+      }[];
+    };
+  };
+}

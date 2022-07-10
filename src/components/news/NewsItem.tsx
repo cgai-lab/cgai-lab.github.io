@@ -12,9 +12,9 @@ import {
   useTheme,
 } from '@mui/material';
 import { Link } from 'gatsby';
+import theme from 'src/theme';
 
 const NewsItem = (board: BoardType) => {
-  const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
@@ -23,13 +23,14 @@ const NewsItem = (board: BoardType) => {
         <Card style={{ border: 'none', boxShadow: 'none' }}>
           <CardActionArea component={Link} to={board.slug}>
             <CardHeader
+              style={{ fontFamily: theme.typography.fontFamily }}
               title={board.title}
               subheader={new Date(board.createdAt).toDateString()}
             />
             <CardContent sx={{ padding: 0 }}>
               <CardMedia
                 component="img"
-                height={lg ? 500 : 200}
+                height={lg ? 300 : 200}
                 image={board.thumbnail.url}
               />
             </CardContent>

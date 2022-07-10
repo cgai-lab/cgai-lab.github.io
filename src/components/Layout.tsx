@@ -114,7 +114,9 @@ const CustomMenu = styled(Collapse)`
   width: 100%;
 `;
 
-const ContentContainer = styled(Box)``;
+const ContentContainer = styled(Box)`
+  min-height: 100vh;
+`;
 
 const NavButton = styled(Link)`
   color: #222222;

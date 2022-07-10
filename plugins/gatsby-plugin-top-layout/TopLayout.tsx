@@ -6,6 +6,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '../../src/theme';
 
 export default function TopLayout({ children }: { children: React.ReactNode }) {
+  console.warn(theme);
+
   return (
     <React.Fragment>
       <Helmet>

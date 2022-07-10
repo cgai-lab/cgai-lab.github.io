@@ -10,9 +10,9 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
+import theme from 'src/theme';
 
 const CoursesPage = () => {
-  const theme = useTheme();
   return (
     <Layout>
       <Container>
@@ -24,6 +24,7 @@ const CoursesPage = () => {
                 <Typography
                   variant="subtitle1"
                   sx={{
+                    fontFamily: theme.typography.fontFamily,
                     fontWeight: theme.typography.fontWeightLight,
                     color: theme.palette.grey[600],
                   }}
