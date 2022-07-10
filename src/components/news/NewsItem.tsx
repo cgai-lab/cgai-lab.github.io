@@ -25,6 +25,7 @@ const NewsItem = (board: BoardType) => {
             <CardHeader
               style={{ fontFamily: theme.typography.fontFamily }}
               title={board.title}
+              sx={{ fontFamily: 'inherit' }}
               subheader={new Date(board.createdAt).toDateString()}
             />
             <CardContent sx={{ padding: 0 }}>

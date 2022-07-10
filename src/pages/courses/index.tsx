@@ -8,7 +8,6 @@ import {
   ListItem,
   ListItemText,
   Typography,
-  useTheme,
 } from '@mui/material';
 import theme from 'src/theme';
 
@@ -24,7 +23,6 @@ const CoursesPage = () => {
                 <Typography
                   variant="subtitle1"
                   sx={{
-                    fontFamily: theme.typography.fontFamily,
                     fontWeight: theme.typography.fontWeightLight,
                     color: theme.palette.grey[600],
                   }}

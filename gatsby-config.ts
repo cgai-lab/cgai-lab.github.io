@@ -15,12 +15,27 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    'gatsby-plugin-mui-emotion',
-    'gatsby-plugin-top-layout',
+    // 'gatsby-plugin-mui-emotion',
+    // 'gatsby-plugin-top-layout',
     'gatsby-plugin-image',
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Montserrat`,
+                variants: [`100`, `200`, `300`, `400`, `500`, `700`, `900`],
+              },
+            ],
+          },
+        },
+      },
+    },
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-tsconfig-paths`,
     {
@@ -32,13 +47,6 @@ const config: GatsbyConfig = {
       __key: 'images',
     },
     `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Montserrat:100,300,400,500,700,900`],
-        display: 'swap',
-      },
-    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
