@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Layout from '@components/Layout';
-import { Box, Button, ButtonGroup, Container, List } from '@mui/material';
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Container,
+  List,
+  ToggleButton,
+  ToggleButtonGroup,
+} from '@mui/material';
 import { graphql } from 'gatsby';
 import { PaperListType } from '@types/data';
 import ResearchItem from '@components/research/ReasearchItem';
@@ -11,33 +19,66 @@ const ResearchPage = ({
     paperList: { edges },
   },
 }: PaperListType) => {
+  const [value, setValue] = useState('All');
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newValue: string,
+  ) => {
+    setValue(newValue);
+  };
+
   return (
     <Layout>
       <Container>
         <Box px={2}>
-          <ButtonGroup
+          <ToggleButtonGroup
             fullWidth
-            variant="contained"
+            color="primary"
+            value={value}
+            exclusive
+            onChange={handleChange}
             aria-label="outlined primary button group"
           >
-            <Button style={{ textTransform: 'none' }}>All</Button>
-            <Button style={{ textTransform: 'none' }}>Patent</Button>
-            <Button style={{ textTransform: 'none' }}>
+            <ToggleButton style={{ textTransform: 'none' }} value="All">
+              All
+            </ToggleButton>
+            <ToggleButton style={{ textTransform: 'none' }} value="Patent">
+              Patent
+            </ToggleButton>
+            <ToggleButton
+              style={{ textTransform: 'none' }}
+              value="International Journal"
+            >
               International Journal
-            </Button>
-            <Button style={{ textTransform: 'none' }}>
+            </ToggleButton>
+            <ToggleButton
+              style={{ textTransform: 'none' }}
+              value="International Conference"
+            >
               International Conference
-            </Button>
-            <Button style={{ textTransform: 'none' }}>Domestic Journal</Button>
-            <Button style={{ textTransform: 'none' }}>
+            </ToggleButton>
+            <ToggleButton
+              style={{ textTransform: 'none' }}
+              value="Domestic Journal"
+            >
+              Domestic Journal
+            </ToggleButton>
+            <ToggleButton
+              style={{ textTransform: 'none' }}
+              value="Domestic Conference"
+            >
               Domestic Conference
-            </Button>
-          </ButtonGroup>
+            </ToggleButton>
+          </ToggleButtonGroup>
         </Box>
         <List>
-          {edges.map(({ node }) => (
-            <ResearchItem key={node.id} {...node} />
-          ))}
+          {edges &&
+            edges
+              .filter((item) => {
+                if (value === 'All') return item;
+                if (item.node.type === value) return item;
+              })
+              .map(({ node }) => <ResearchItem key={node.id} {...node} />)}
         </List>
       </Container>
     </Layout>
