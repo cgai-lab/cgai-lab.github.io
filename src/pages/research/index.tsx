@@ -31,7 +31,6 @@ const ResearchPage = ({
         <Box px={2}>
           <ToggleButtonGroup
             fullWidth
-            color="primary"
             value={value}
             exclusive
             onChange={handleChange}

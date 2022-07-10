@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Box
       component="footer"
-      mt={4}
+      mt={8}
       py={4}
       sx={{ bgcolor: theme.palette.grey[100] }}
     >
