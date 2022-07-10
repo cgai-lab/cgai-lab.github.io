@@ -21,10 +21,10 @@ const MainCard = ({
       <CardActionArea>
         <CardMedia component="img" image={imgUrl} height={200} />
         <CardContent>
-          <Typography gutterBottom variant="h6" component="div">
+          <Typography gutterBottom variant="h6" component="div" noWrap>
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary" height={100}>
+          <Typography variant="body2" color="text.secondary" height={140}>
             {content}
           </Typography>
         </CardContent>
