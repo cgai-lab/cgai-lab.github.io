@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, useTheme } from '@mui/material';
+import styled from '@emotion/styled';
 
 const Footer = () => {
   const theme = useTheme();
   return (
-    <Box
+    <FooterWrapper
       component="footer"
       mt={8}
       py={4}
@@ -53,8 +54,10 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </FooterWrapper>
   );
 };
+
+const FooterWrapper = styled(Box)``;
 
 export default Footer;

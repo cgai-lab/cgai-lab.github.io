@@ -31,7 +31,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   };
 
   return (
-    <>
+    <Wrapper>
       <Box sx={{ flexGrow: 1, boxShadow: 0 }}>
         <AppBar
           position="static"
@@ -102,9 +102,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {children}
       </ContentContainer>
       <Footer />
-    </>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled(Box)`
+  min-height: 100vh;
+`;
 
 const CustomMenu = styled(Collapse)`
   position: absolute;
@@ -115,7 +119,8 @@ const CustomMenu = styled(Collapse)`
 `;
 
 const ContentContainer = styled(Box)`
-  min-height: 100vh;
+  position: relative;
+  min-height: 66vh;
 `;
 
 const NavButton = styled(Link)`
