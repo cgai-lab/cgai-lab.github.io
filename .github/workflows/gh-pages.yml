@@ -3,7 +3,7 @@ name: Deploy # Github Action 이름
 on:
   push:
     branches:
-      - master # 빌드할 브랜치
+      - master1 # 빌드할 브랜치
 
 jobs:
   build:
