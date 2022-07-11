@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Layout from '@components/Layout';
-import TopSection from '@components/TopSection';
-import { Container, List } from '@mui/material';
+import { Box, Container, List } from '@mui/material';
 import { graphql } from 'gatsby';
 import { ProjectListType } from '@types/data';
 import ProjectItem from '@components/project/ProjectItem';
+import TitleSection from '@components/TitleSection';
 
 const PublicationsPage = ({
   data: {
@@ -15,11 +15,14 @@ const PublicationsPage = ({
   return (
     <Layout>
       <Container>
-        <List>
-          {edges.map(({ node }) => (
-            <ProjectItem key={node.id} {...node} />
-          ))}
-        </List>
+        <TitleSection title="Publications" subTitle="Publications" />
+        <Box py={2}>
+          <List>
+            {edges.map(({ node }) => (
+              <ProjectItem key={node.id} {...node} />
+            ))}
+          </List>
+        </Box>
       </Container>
     </Layout>
   );

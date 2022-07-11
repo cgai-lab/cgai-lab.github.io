@@ -1,23 +1,25 @@
 import React from 'react';
 
 import Layout from '@components/Layout';
-import TopSection from '@components/TopSection';
 import { graphql } from 'gatsby';
 import { NewsType } from '@types/data';
-import { Container, List } from '@mui/material';
+import { Box, Container, List } from '@mui/material';
 import NewsItem from '@components/news/NewsItem';
+import TitleSection from '@components/TitleSection';
 
 function NewsPage({ data }: NewsType) {
   const boards = data.news.nodes;
   return (
     <Layout>
-      {/* <TopSection title="News" /> */}
       <Container>
-        <List>
-          {boards.map((item) => (
-            <NewsItem key={item.id} {...item} />
-          ))}
-        </List>
+        <TitleSection title="News" subTitle="News" />
+        <Box py={2}>
+          <List>
+            {boards.map((item) => (
+              <NewsItem key={item.id} {...item} />
+            ))}
+          </List>
+        </Box>
       </Container>
     </Layout>
   );

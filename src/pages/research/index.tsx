@@ -13,6 +13,7 @@ import {
 import { graphql } from 'gatsby';
 import { PaperListType } from '@types/data';
 import ResearchItem from '@components/research/ReasearchItem';
+import TitleSection from '@components/TitleSection';
 
 const ResearchPage = ({
   data: {
@@ -32,6 +33,7 @@ const ResearchPage = ({
   return (
     <Layout>
       <Container>
+        <TitleSection title="Research" subTitle="research" />
         <Box px={2}>
           <ToggleButtonGroup
             value={value}

@@ -8,10 +8,11 @@ import {
   ListItem,
   ListItemText,
   Typography,
+  useTheme,
 } from '@mui/material';
-import theme from 'src/theme';
 
 const CoursesPage = () => {
+  const theme = useTheme();
   return (
     <Layout>
       <Container>

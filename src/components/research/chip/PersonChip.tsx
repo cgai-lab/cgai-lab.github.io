@@ -1,4 +1,4 @@
-import { Chip } from '@mui/material';
+import { Chip, useTheme } from '@mui/material';
 import React from 'react';
 import { generateColor } from '@utils/color';
 
@@ -7,6 +7,7 @@ type IProps = {
 };
 
 const PersonChip = ({ item }: IProps) => {
+  const theme = useTheme();
   return (
     <Chip
       label={item}
@@ -15,6 +16,7 @@ const PersonChip = ({ item }: IProps) => {
         mixBlendMode: 'difference',
         marginRight: 1,
         marginY: 1,
+        fontWeight: theme.typography.fontWeightBold,
         cursor: 'pointer',
         // ...generateColor(item),
       }}
