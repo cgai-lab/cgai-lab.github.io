@@ -13,6 +13,7 @@ const PersonChip = ({ item }: IProps) => {
       label={item}
       sx={{
         bgcolor: generateColor(item),
+        // bgcolor: theme.palette.secondary.main,
         mixBlendMode: 'difference',
         marginRight: 1,
         marginY: 1,

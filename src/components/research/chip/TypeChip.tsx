@@ -13,6 +13,7 @@ const TypeBadge = ({ item }: IProps) => {
       label={item}
       sx={{
         bgcolor: generateColor(item),
+        // bgcolor: theme.palette.primary.main,
         mixBlendMode: 'difference',
         marginY: 1,
         cursor: 'pointer',
