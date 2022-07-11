@@ -40,11 +40,12 @@ jobs:
       - run:
           name: set git config
           command: |
+            npm install -g --silent gh-pages
             git config user.email $GITHUB_EMAIL
             git config user.name $GITHUB_NAME
       - add_ssh_keys:
           fingerprints:
-            - ''
+            - $FINGERPRINTS
       - run:
           name: deploy
           command: gh-pages -d public
