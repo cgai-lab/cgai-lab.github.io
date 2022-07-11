@@ -7,6 +7,8 @@ import {
   List,
   ToggleButton,
   ToggleButtonGroup,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import { graphql } from 'gatsby';
 import { PaperListType } from '@types/data';
@@ -17,6 +19,8 @@ const ResearchPage = ({
     paperList: { edges },
   },
 }: PaperListType) => {
+  const theme = useTheme();
+  const md = useMediaQuery(theme.breakpoints.up('md'));
   const [value, setValue] = useState('All');
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -30,8 +34,9 @@ const ResearchPage = ({
       <Container>
         <Box px={2}>
           <ToggleButtonGroup
-            fullWidth
             value={value}
+            fullWidth
+            orientation={md ? 'horizontal' : 'vertical'}
             exclusive
             onChange={handleChange}
             aria-label="outlined primary button group"
@@ -68,15 +73,17 @@ const ResearchPage = ({
             </ToggleButton>
           </ToggleButtonGroup>
         </Box>
-        <List>
-          {edges &&
-            edges
-              .filter((item) => {
-                if (value === 'All') return item;
-                if (item.node.type === value) return item;
-              })
-              .map(({ node }) => <ResearchItem key={node.id} {...node} />)}
-        </List>
+        <Box py={2}>
+          <List>
+            {edges &&
+              edges
+                .filter((item) => {
+                  if (value === 'All') return item;
+                  if (item.node.type === value) return item;
+                })
+                .map(({ node }) => <ResearchItem key={node.id} {...node} />)}
+          </List>
+        </Box>
       </Container>
     </Layout>
   );
