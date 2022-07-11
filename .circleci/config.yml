@@ -45,7 +45,7 @@ jobs:
             git config user.name $GITHUB_NAME
       - add_ssh_keys:
           fingerprints:
-            - $FINGERPRINTS
+            - '49:b9:0a:d8:f2:e4:37:22:b6:c8:82:38:89:4c:9d:0f'
       - run:
           name: deploy
           command: gh-pages -d public
