@@ -5,7 +5,7 @@ const Section = ({
   title,
   subTitle = 'PEOPLE',
 }: {
-  title: string;
+  title: string | node;
   subTitle?: string;
 }) => {
   return (

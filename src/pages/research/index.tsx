@@ -5,6 +5,8 @@ import {
   Box,
   Container,
   List,
+  MenuItem,
+  Select,
   ToggleButton,
   ToggleButtonGroup,
   useMediaQuery,
@@ -14,6 +16,16 @@ import { graphql } from 'gatsby';
 import { PaperListType } from '@types/data';
 import ResearchItem from '@components/research/ReasearchItem';
 import TitleSection from '@components/TitleSection';
+import { SelectChangeEvent } from '@mui/material';
+
+const DATA = [
+  'All',
+  'Patent',
+  'International Journal',
+  'International Conference',
+  'Domestic Journal',
+  'Domestic Conference',
+];
 
 const ResearchPage = ({
   data: {
@@ -29,6 +41,9 @@ const ResearchPage = ({
   ) => {
     setValue(newValue);
   };
+  const handleSelectChange = (event: SelectChangeEvent) => {
+    setValue(event.target.value);
+  };
 
   return (
     <Layout>
@@ -38,42 +53,32 @@ const ResearchPage = ({
           <ToggleButtonGroup
             value={value}
             fullWidth
-            orientation={md ? 'horizontal' : 'vertical'}
             exclusive
+            sx={{ display: md ? 'inline-flex' : 'none' }}
             onChange={handleChange}
             aria-label="outlined primary button group"
           >
-            <ToggleButton style={{ textTransform: 'none' }} value="All">
-              All
-            </ToggleButton>
-            <ToggleButton style={{ textTransform: 'none' }} value="Patent">
-              Patent
-            </ToggleButton>
-            <ToggleButton
-              style={{ textTransform: 'none' }}
-              value="International Journal"
-            >
-              International Journal
-            </ToggleButton>
-            <ToggleButton
-              style={{ textTransform: 'none' }}
-              value="International Conference"
-            >
-              International Conference
-            </ToggleButton>
-            <ToggleButton
-              style={{ textTransform: 'none' }}
-              value="Domestic Journal"
-            >
-              Domestic Journal
-            </ToggleButton>
-            <ToggleButton
-              style={{ textTransform: 'none' }}
-              value="Domestic Conference"
-            >
-              Domestic Conference
-            </ToggleButton>
+            {DATA.map((item) => (
+              <ToggleButton
+                key={item}
+                value={item}
+                style={{ textTransform: 'none' }}
+              >
+                {item}
+              </ToggleButton>
+            ))}
           </ToggleButtonGroup>
+          <Select
+            value={value}
+            onChange={handleSelectChange}
+            sx={{ display: md ? 'none' : 'inline-flex' }}
+          >
+            {DATA.map((item) => (
+              <MenuItem key={item} value={item}>
+                {item}
+              </MenuItem>
+            ))}
+          </Select>
         </Box>
         <Box py={2}>
           <List>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from '@components/Layout';
-import { Container } from '@mui/material';
+import { Container, Typography, Box, useTheme } from '@mui/material';
 import TitleSection from '@components/TitleSection';
 import SummaryInfo from '@components/professor/SummaryInfo';
 
@@ -44,10 +44,38 @@ const honors = [
 ];
 
 const AboutPage = () => {
+  const theme = useTheme();
   return (
     <Layout>
       <Container>
-        <TitleSection title="Professor" subTitle="professor" />
+        <TitleSection
+          title={
+            <Box>
+              <img
+                height={250}
+                src="https://computer.seoultech.ac.kr/storage/prof/profile/SNUST1537403560837.jpg"
+              />
+              <Typography
+                variant="h4"
+                py={1}
+                sx={{ fontWeight: theme.typography.fontWeightBold }}
+              >
+                Dongwann Kang
+              </Typography>
+              <Typography variant="body1" py={1}>
+                <b>Professor</b>, Computer Graphcis and Image Processing
+                Laboratory
+              </Typography>
+              <Typography variant="body1" py={1}>
+                Seoul National University of Science and Technology
+              </Typography>
+              <Typography variant="body1" py={1}>
+                dongwann@seoultech.ac.kr
+              </Typography>
+            </Box>
+          }
+          subTitle="professor"
+        />
         <SummaryInfo title="Education" contents={edus} />
         <SummaryInfo title="Research Area" contents={areas} />
         <SummaryInfo title="Honors" contents={honors} />
