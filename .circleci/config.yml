@@ -37,6 +37,8 @@ jobs:
       - run:
           name: Gatsby build
           command: npm run build
+          enviroment:
+            GATSBY_CONTENTFUL_ACCESS_TOKEN: $AccessToken
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
