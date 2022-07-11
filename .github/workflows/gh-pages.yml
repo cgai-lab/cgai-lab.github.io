@@ -6,7 +6,7 @@ on:
       - master # 빌드할 브랜치
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     env:
       GATSBY_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.GATSBY_CONTENTFUL_ACCESS_TOKEN }}
