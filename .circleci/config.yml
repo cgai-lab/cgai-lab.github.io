@@ -23,7 +23,6 @@ jobs:
     working_directory: '.'
     executor: 'node/default'
     steps:
-      - checkout
       - node/install-npm
       - node/install-packages:
           app-dir: ./
