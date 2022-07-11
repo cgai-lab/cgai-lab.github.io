@@ -35,10 +35,11 @@ jobs:
           name: deploy
           command: gh-pages -d public
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   build-deploy-workflow:
     jobs:
-      # - say-hello
       - build
+        filters:
+          branches:
+            only:
+              - master
