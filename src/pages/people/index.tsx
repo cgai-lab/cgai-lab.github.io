@@ -20,7 +20,7 @@ const PeoplePage = ({
     <Layout>
       <Container>
         <TitleSection title="Faculty" />
-        <PeopleContainer people={professor} />
+        <PeopleContainer people={professor} isCenter />
         <TitleSection title="Students" />
         <PeopleContainer people={students} />
         <TitleSection title="Alumni" />

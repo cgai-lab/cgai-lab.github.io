@@ -45,7 +45,6 @@ export interface BoardType {
     };
   };
 }
-
 export interface NewsType {
   data: {
     news: {

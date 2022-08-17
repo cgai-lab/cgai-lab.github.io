@@ -17,9 +17,8 @@ const Section = ({
 };
 
 const SectionContainer = styled.div`
-  margin-top: 80px;
-  margin-bottom: 80px;
-  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   & .sectionDiv {
     opacity: 0.6;
