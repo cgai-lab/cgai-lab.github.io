@@ -15,10 +15,9 @@ import Footer from './Footer';
 import Logo from './Logo';
 
 const pages: string[] = [
-  'professor',
   'people',
-  'research',
   'publications',
+  'project',
   'courses',
   'news',
 ];

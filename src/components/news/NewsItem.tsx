@@ -18,7 +18,6 @@ const NewsItem = (board: BoardType) => {
 
   return (
     <Grid item xs={12} sm={6} md={6}>
-      {/* <Box sx={{ boxShadow: 2, borderRadius: 10 }}> */}
       <Card variant="outlined" sx={{ borderRadius: 5 }}>
         <CardActionArea component={Link} to={board.slug}>
           <CardMedia
@@ -43,7 +42,6 @@ const NewsItem = (board: BoardType) => {
           </CardContent>
         </CardActionArea>
       </Card>
-      {/* </Box> */}
     </Grid>
   );
 };

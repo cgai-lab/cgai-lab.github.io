@@ -12,7 +12,7 @@ function NewsPage({ data }: NewsType) {
   return (
     <Layout>
       <Container>
-        <TitleSection title="News" subTitle="News" />
+        <TitleSection title="News" subTitle="" />
         <Box py={2}>
           <Grid container spacing={2}>
             {boards.map((item) => (
