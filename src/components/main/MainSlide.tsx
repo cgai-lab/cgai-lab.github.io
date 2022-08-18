@@ -6,7 +6,7 @@ const MainSlide = () => {
   return (
     <MainSlideContainer>
       <Box>
-        <Typography className="main">Graphcis and Imaging Lab.</Typography>
+        <Typography className="main">Graphics and Imaging Lab.</Typography>
         <Typography className="sub">
           Welcome to Computer Graphics and Imaging Lab at Seoultech.
         </Typography>
