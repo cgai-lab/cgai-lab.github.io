@@ -28,8 +28,15 @@ const NewsItem = (board: BoardType) => {
           />
           <CardContent>
             <CardHeader
-              style={{ fontFamily: theme.typography.fontFamily }}
-              title={<Typography variant="h6">{board.title}</Typography>}
+              style={{
+                fontFamily: theme.typography.fontFamily,
+                display: 'block',
+              }}
+              title={
+                <Typography variant="h6" noWrap>
+                  {board.title}
+                </Typography>
+              }
               sx={{ fontFamily: 'inherit' }}
               subheader={new Date(board.createdAt).toDateString()}
             />
