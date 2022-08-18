@@ -3,9 +3,19 @@ import { PersonType } from '@types/data';
 import React from 'react';
 import PersonContent from './PersonContent';
 
-const PeopleContainer = ({ people }: { people: PersonType[] }) => {
+const PeopleContainer = ({
+  people,
+  isCenter,
+}: {
+  people: PersonType[];
+  isCenter?: boolean;
+}) => {
   return (
-    <Grid container spacing={3}>
+    <Grid
+      container
+      spacing={3}
+      justifyContent={isCenter ? 'center' : 'flex-start'}
+    >
       {people.map((item) => (
         <PersonContent key={item.node.id} {...item} />
       ))}

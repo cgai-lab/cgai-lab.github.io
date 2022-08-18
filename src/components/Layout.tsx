@@ -15,10 +15,9 @@ import Footer from './Footer';
 import Logo from './Logo';
 
 const pages: string[] = [
-  'professor',
   'people',
-  'research',
   'publications',
+  'project',
   'courses',
   'news',
 ];
@@ -48,7 +47,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <Box sx={{ flexGrow: 10 }} />
             <Box
               sx={{
-                display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' },
+                display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' },
               }}
             >
               {pages.map((page) => (
@@ -59,7 +58,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </Box>
             <Box
               sx={{
-                display: { xs: 'flex', sm: 'flex', md: 'flex', lg: 'none' },
+                display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none' },
               }}
             >
               <IconButton
@@ -82,7 +81,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               display: {
                 xs: 'display',
                 sm: 'display',
-                md: 'display',
+                md: 'none',
                 lg: 'none',
               },
             }}

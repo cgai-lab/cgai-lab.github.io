@@ -1,4 +1,5 @@
 import Layout from '@components/Layout';
+import TitleSection from '@components/TitleSection';
 import styled from '@emotion/styled';
 import {
   Avatar,
@@ -26,6 +27,7 @@ const BoardPage = ({
   return (
     <Layout>
       <Container>
+        {/* <TitleSection title="News" subTitle="News" /> */}
         <Box p={2}>
           <Typography variant="h4" py={1}>
             {title}

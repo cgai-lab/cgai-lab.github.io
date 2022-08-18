@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from '@components/Layout';
-import { Container, Typography, Box, useTheme } from '@mui/material';
+import { Container, Typography, Box, useTheme, Divider } from '@mui/material';
 import TitleSection from '@components/TitleSection';
 import SummaryInfo from '@components/professor/SummaryInfo';
 
@@ -56,8 +56,8 @@ const AboutPage = () => {
                 src="https://computer.seoultech.ac.kr/storage/prof/profile/SNUST1537403560837.jpg"
               />
               <Typography
-                variant="h4"
-                py={1}
+                variant="h5"
+                py={2}
                 sx={{ fontWeight: theme.typography.fontWeightBold }}
               >
                 Dongwann Kang
@@ -76,8 +76,11 @@ const AboutPage = () => {
           }
           subTitle="professor"
         />
+        <Divider sx={{ paddingY: 2 }} />
         <SummaryInfo title="Education" contents={edus} />
+        <Divider sx={{ paddingY: 2 }} />
         <SummaryInfo title="Research Area" contents={areas} />
+        <Divider sx={{ paddingY: 2 }} />
         <SummaryInfo title="Honors" contents={honors} />
       </Container>
     </Layout>

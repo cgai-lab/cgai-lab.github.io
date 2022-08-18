@@ -1,26 +1,94 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Layout from '@components/Layout';
-import { Box, Container, List } from '@mui/material';
+import {
+  Box,
+  Container,
+  List,
+  MenuItem,
+  Select,
+  ToggleButton,
+  ToggleButtonGroup,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { graphql } from 'gatsby';
-import { ProjectListType } from '@types/data';
-import ProjectItem from '@components/project/ProjectItem';
+import { PaperListType } from '@types/data';
+import ResearchItem from '@components/publications/ReasearchItem';
 import TitleSection from '@components/TitleSection';
+import { SelectChangeEvent } from '@mui/material';
 
-const PublicationsPage = ({
+const DATA = [
+  'All',
+  'Patent',
+  'International Journal',
+  'International Conference',
+  'Domestic Journal',
+  'Domestic Conference',
+];
+
+const ResearchPage = ({
   data: {
-    projectList: { edges },
+    paperList: { edges },
   },
-}: ProjectListType) => {
+}: PaperListType) => {
+  const theme = useTheme();
+  const md = useMediaQuery(theme.breakpoints.up('md'));
+  const [value, setValue] = useState('All');
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newValue: string,
+  ) => {
+    setValue(newValue);
+  };
+  const handleSelectChange = (event: SelectChangeEvent) => {
+    setValue(event.target.value);
+  };
+
   return (
     <Layout>
       <Container>
-        <TitleSection title="Publications" subTitle="Publications" />
+        <TitleSection title="Publications" subTitle="" />
+        <Box px={2}>
+          <ToggleButtonGroup
+            value={value}
+            fullWidth
+            exclusive
+            sx={{ display: md ? 'inline-flex' : 'none' }}
+            onChange={handleChange}
+            aria-label="outlined primary button group"
+          >
+            {DATA.map((item) => (
+              <ToggleButton
+                key={item}
+                value={item}
+                style={{ textTransform: 'none' }}
+              >
+                {item}
+              </ToggleButton>
+            ))}
+          </ToggleButtonGroup>
+          <Select
+            value={value}
+            onChange={handleSelectChange}
+            sx={{ display: md ? 'none' : 'inline-flex' }}
+          >
+            {DATA.map((item) => (
+              <MenuItem key={item} value={item}>
+                {item}
+              </MenuItem>
+            ))}
+          </Select>
+        </Box>
         <Box py={2}>
           <List>
-            {edges.map(({ node }) => (
-              <ProjectItem key={node.id} {...node} />
-            ))}
+            {edges &&
+              edges
+                .filter((item) => {
+                  if (value === 'All') return item;
+                  if (item.node.type === value) return item;
+                })
+                .map(({ node }) => <ResearchItem key={node.id} {...node} />)}
           </List>
         </Box>
       </Container>
@@ -30,20 +98,21 @@ const PublicationsPage = ({
 
 export const data = graphql`
   query {
-    projectList: allContentfulProject(
-      sort: { fields: startDate, order: DESC }
-    ) {
+    paperList: allContentfulPaper(sort: { fields: date, order: DESC }) {
       edges {
         node {
           id
-          title
           option
-          startDate(formatString: "YYYY-MM")
-          endDate(formatString: "YYYY-MM")
+          page
+          title
+          type
+          url
+          withPerson
+          date(formatString: "YYYY-MM")
         }
       }
     }
   }
 `;
 
-export default PublicationsPage;
+export default ResearchPage;

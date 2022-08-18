@@ -6,6 +6,7 @@ import {
   CardHeader,
   ListItem,
   Typography,
+  useTheme,
 } from '@mui/material';
 import { PaperType } from '@types/data';
 import { Link } from 'gatsby';
@@ -21,6 +22,7 @@ const ResearchItem = ({
   url,
   withPerson,
 }: PaperType) => {
+  const theme = useTheme();
   return (
     <ListItem sx={{ display: 'inline-block' }}>
       <Box sx={{ boxShadow: 4, borderRadius: 1 }}>
@@ -30,11 +32,15 @@ const ResearchItem = ({
               title={<Typography variant="h6">{title}</Typography>}
               subheader={
                 <Breadcrumbs aria-label="breadcrum">
-                  <TypeChip item={type} />
+                  <Typography>{type}</Typography>
+                  {/* <TypeChip item={type} /> */}
                   <Box>
                     {withPerson &&
                       withPerson.map((item) => (
-                        <PersonChip key={item} item={item} />
+                        <Typography key={item} component="span">
+                          {item},&nbsp;
+                        </Typography>
+                        // <PersonChip key={item} item={item} />
                       ))}
                   </Box>
                   <Typography>{date}</Typography>

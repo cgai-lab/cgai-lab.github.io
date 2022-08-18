@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '@components/Layout';
 import { graphql } from 'gatsby';
 import { NewsType } from '@types/data';
-import { Box, Container, List } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 import NewsItem from '@components/news/NewsItem';
 import TitleSection from '@components/TitleSection';
 
@@ -12,13 +12,13 @@ function NewsPage({ data }: NewsType) {
   return (
     <Layout>
       <Container>
-        <TitleSection title="News" subTitle="News" />
+        <TitleSection title="News" subTitle="" />
         <Box py={2}>
-          <List>
+          <Grid container spacing={2}>
             {boards.map((item) => (
               <NewsItem key={item.id} {...item} />
             ))}
-          </List>
+          </Grid>
         </Box>
       </Container>
     </Layout>
