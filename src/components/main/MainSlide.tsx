@@ -6,9 +6,9 @@ const MainSlide = () => {
   return (
     <MainSlideContainer>
       <Box>
-        <Typography className="main">Grow your business.</Typography>
+        <Typography className="main">Graphcis and Imaging Lab.</Typography>
         <Typography className="sub">
-          Give your business a boost with a beautifully crafted homepage.
+          Welcome to Computer Graphics and Imaging Lab at Seoultech.
         </Typography>
       </Box>
     </MainSlideContainer>
@@ -21,7 +21,7 @@ const MainSlideContainer = styled(Box)`
   justify-content: center;
   height: 480px;
   margin-bottom: 100px;
-  background-image: url(https://uploads-ssl.webflow.com/620df899c73adb222e3239f2/6218db04f0ba2991d0f638c0_teaser.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2022/04/01/23/56/bird-7105939_960_720.jpg);
   background-size: cover;
   background-position: right;
   color: #fff;
@@ -42,7 +42,7 @@ const MainSlideContainer = styled(Box)`
   }
 
   & .sub {
-    opacity: 0.6;
+    opacity: 0.9;
     margin-bottom: 10px;
     font-size: 20px;
     line-height: 34px;

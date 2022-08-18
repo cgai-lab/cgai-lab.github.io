@@ -15,7 +15,7 @@ const MainAboutWork = ({
   src: string;
 }) => {
   return (
-    <Grid container spacing={10} my={1}>
+    <Grid container columnSpacing={10} rowSpacing={3} my={1}>
       <Grid item md={4} xs={12} order={{ xs: 2, md: isLeft ? 1 : 2 }}>
         <IntroSection subTitle="ABOUT" title={title} />
         <Typography sx={{ lineHeight: 2 }}>{content}</Typography>
@@ -28,8 +28,10 @@ const MainAboutWork = ({
 };
 
 const ImageWrapper = styled.img`
-  width: 100%;
-  max-height: 450px;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  // max-height: 450px;
 `;
 
 export default MainAboutWork;

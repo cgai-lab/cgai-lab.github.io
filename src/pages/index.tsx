@@ -28,9 +28,9 @@ const IndexPage = ({
             <Typography variant="h6" sx={{ textAlign: 'left', lineHeight: 2 }}>
               &nbsp;Our computer graphics and image processing laboratory was
               established in 2018. Prof. Dongwann Kang has been leading the
-              research. Since the beginning, our focus of research are in the
-              field of 3D visualization, reconstruction, and image processing of
-              medical datasets such as CT, MRI, PET, and so on.
+              research. Our focus of research are in the field of 3D
+              visualization, reconstruction, and image processing of object
+              detection, style transfer and so on.
             </Typography>
           }
           subTitle="Introduce"
