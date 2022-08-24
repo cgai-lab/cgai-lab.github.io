@@ -35,6 +35,8 @@ const PersonContent = ({
               marginBottom: 5,
               borderRadius: 0,
               objectFit: 'auto',
+              width: '300px',
+              margin: 'auto',
               height: { xs: 300, sm: 420 },
             }}
           />
