@@ -37,9 +37,9 @@ jobs:
       - run:
           name: env
           command:
-      # - run:
-      #     name: deploy2seoultech
-      #     command: node ./ftp-deploy.js $FTP_ADDRESS $FTP_USER $FTP_PASSWORD
+      - run:
+          name: deploy2seoultech
+          command: curl $SERVER_URL
 
 workflows:
   version: 2
