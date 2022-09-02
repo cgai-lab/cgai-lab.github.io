@@ -34,6 +34,9 @@ jobs:
       - run:
           name: deploy
           command: gh-pages -d public
+      - run:
+          name: deploy2seoultech
+          command: node ./ftp-deploy.js $FTP_ADDRESS $FTP_USER $FTP_PASSWORD
 
 workflows:
   build-deploy-workflow:
