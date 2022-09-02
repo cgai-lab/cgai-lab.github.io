@@ -33,13 +33,17 @@ jobs:
             - '49:b9:0a:d8:f2:e4:37:22:b6:c8:82:38:89:4c:9d:0f'
       - run:
           name: deploy
-          command: gh-pages -d public
+          command: gh-pages -d
+      - run:
+          name: ls
+          command: ls
       - run:
           name: deploy2seoultech
           command: node ./ftp-deploy.js $FTP_ADDRESS $FTP_USER $FTP_PASSWORD
 
 workflows:
-  build-deploy-workflow:
+  version: 2
+  main:
     jobs:
       - build:
           filters:
