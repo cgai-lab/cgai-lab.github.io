@@ -39,7 +39,7 @@ function uploadBuildDirectory() {
     password,
     port: 22,
     localRoot: `./${LOCAL_BUILD_DIRECTORY}`,
-    remoteRoot: `./${DEPLOY_DIRECTORY_NAME}`,
+    remoteRoot: `${DEPLOY_DIRECTORY_NAME}`,
     include: ['*', '**/*'],
     deleteRemote: true,
   };
