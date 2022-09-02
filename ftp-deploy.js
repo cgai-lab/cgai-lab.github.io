@@ -9,7 +9,7 @@ const PRODUCTION_DIRECTORY_NAME = 'master';
 const BROKEN_BUILD = 'broken';
 const PRODUCTION_URL = 'https://cg.seoultech.ac.kr/';
 
-const [host, user, password] = process.argv.slice(2);
+const [host, port, user, password] = process.argv.slice(2);
 
 function main() {
   return (
@@ -35,7 +35,7 @@ function uploadBuildDirectory() {
     host,
     user,
     password,
-    port: 22,
+    port,
     localRoot: `./${LOCAL_BUILD_DIRECTORY}`,
     remoteRoot: `${DEPLOY_DIRECTORY_NAME}`,
     include: ['*', '**/*'],
