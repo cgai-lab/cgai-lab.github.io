@@ -11,8 +11,6 @@ const PRODUCTION_URL = 'https://cg.seoultech.ac.kr/';
 
 const [host, user, password] = process.argv.slice(2);
 
-console.log(host, user, password);
-
 function main() {
   return (
     uploadBuildDirectory()
