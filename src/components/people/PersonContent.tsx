@@ -34,6 +34,7 @@ const PersonContent = ({
             sx={{
               marginBottom: 5,
               borderRadius: 0,
+              maxWidth: '100%',
               objectFit: 'auto',
               width: '300px',
               margin: 'auto',
