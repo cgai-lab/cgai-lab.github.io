@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import { graphql } from 'gatsby';
 import { PaperListType } from '@types/data';
-import ResearchItem from '@components/publications/ReasearchItem';
+import ResearchItem from '@components/publications/ReasearchItemCopy';
 import TitleSection from '@components/TitleSection';
 import { SelectChangeEvent } from '@mui/material';
 
