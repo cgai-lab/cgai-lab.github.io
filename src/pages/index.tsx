@@ -48,6 +48,24 @@ const IndexPage = ({
           src="https://cdn.pixabay.com/photo/2021/12/18/19/37/eye-6879642_960_720.jpg"
           content="Computer imaging is an interdisciplinary scientific field that deals with how computers can gain high-level understanding from digital images or videos. From the perspective of engineering, it seeks to understand and automate tasks that the human visual system can do."
         />
+        <TitleSection
+          title={
+            <Typography
+              variant="subtitle1"
+              sx={{ textAlign: 'left', lineHeight: 2 }}
+            >
+              We are looking for motivated PhD students / PostDocs who are not
+              afraid to get their hands dirty. f you are interested in computer
+              graphics and vision, and are motivated and diligent, please
+              email&nbsp;
+              <a href="mailto:dongwann@seoultech.ac.kr">
+                dongwann@seoultech.ac.kr
+              </a>
+              &nbsp; to discuss your potential for a career in our lab.
+            </Typography>
+          }
+          subTitle="Open Postions"
+        />
       </Container>
     </Layout>
   );
