@@ -40,15 +40,13 @@ const IndexPage = ({
           isLeft={true}
           title="Graphics"
           src="https://cdn.pixabay.com/photo/2018/03/30/15/11/deer-3275594_960_720.jpg"
-          content="OpenGL (Open Graphics Library[3]) is a cross-language, cross-platform
-          application programming interface (API) for rendering 2D and 3D vector
-          graphics."
+          content="Computer graphics is a sub-field of computer science which studies methods for digitally synthesizing and manipulating visual content. Although the term often refers to the study of three-dimensional computer graphics, it also encompasses two-dimensional graphics and image processing."
         />
         <MainAboutWork
           isLeft={false}
           title="Imaging"
           src="https://cdn.pixabay.com/photo/2021/12/18/19/37/eye-6879642_960_720.jpg"
-          content="Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
+          content="Computer imaging is an interdisciplinary scientific field that deals with how computers can gain high-level understanding from digital images or videos. From the perspective of engineering, it seeks to understand and automate tasks that the human visual system can do."
         />
       </Container>
     </Layout>
