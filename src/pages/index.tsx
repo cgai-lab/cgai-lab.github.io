@@ -33,7 +33,7 @@ const IndexPage = ({
               detection, style transfer and so on.
             </Typography>
           }
-          subTitle="Introduce"
+          subTitle="Introduction"
         />
         <Divider />
         <MainAboutWork
