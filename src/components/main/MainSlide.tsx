@@ -6,7 +6,9 @@ const MainSlide = () => {
   return (
     <MainSlideContainer>
       <Box>
-        <Typography className="main">Graphics and Imaging Lab.</Typography>
+        <Typography className="main">
+          {'Computer Graphics & Imaging Lab.'}
+        </Typography>
         <Typography className="sub">
           Welcome to Computer Graphics and Imaging Lab at Seoultech.
         </Typography>
@@ -26,6 +28,8 @@ const MainSlideContainer = styled(Box)`
   background-position: right;
   color: #fff;
   text-align: center;
+
+  filter: grayscale(50%);
 
   & .main {
     font-size: 56px;

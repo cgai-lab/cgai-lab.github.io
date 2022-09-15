@@ -21,8 +21,11 @@ const ResearchItem = ({
   option,
   url,
   withPerson,
+  dio,
 }: PaperType) => {
   const theme = useTheme();
+  console.log(dio, 1231);
+
   return (
     <ListItem sx={{ display: 'inline-block' }}>
       <Box sx={{ boxShadow: 4, borderRadius: 1 }}>

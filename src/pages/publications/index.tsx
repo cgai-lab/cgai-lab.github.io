@@ -96,7 +96,7 @@ const ResearchPage = ({
 
 export const data = graphql`
   query {
-    paperList: allContentfulPaper(sort: { fields: date, order: DESC }) {
+    paperList: allContentfulPublications(sort: { fields: date, order: DESC }) {
       edges {
         node {
           id

@@ -62,6 +62,7 @@ export interface PaperType {
   option?: string[];
   url?: string;
   withPerson: string[];
+  dio?: string;
 }
 
 export interface PaperListType {
