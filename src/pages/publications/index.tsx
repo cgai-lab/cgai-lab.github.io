@@ -166,19 +166,21 @@ const ResearchPage = ({
                 .map(({ node }) => <ResearchItem key={node.id} {...node} />)}
           </ul> */}
           {data &&
-            Object.keys(data).map((key) => (
-              <Box key={key}>
-                <Typography variant="h4">{key}</Typography>
-                <Box>
-                  <ul>
-                    {data[key] &&
-                      data[key].map((item) => (
-                        <ResearchItem key={item.id} {...item} />
-                      ))}
-                  </ul>
+            Object.keys(data)
+              .reverse()
+              .map((key) => (
+                <Box key={key}>
+                  <Typography variant="h4">{key}</Typography>
+                  <Box>
+                    <ul>
+                      {data[key] &&
+                        data[key].map((item) => (
+                          <ResearchItem key={item.id} {...item} />
+                        ))}
+                    </ul>
+                  </Box>
                 </Box>
-              </Box>
-            ))}
+              ))}
         </Box>
       </Container>
     </Layout>
