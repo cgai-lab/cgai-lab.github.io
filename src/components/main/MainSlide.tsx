@@ -23,13 +23,11 @@ const MainSlideContainer = styled(Box)`
   justify-content: center;
   height: 480px;
   margin-bottom: 100px;
-  background-image: url(https://cdn.pixabay.com/photo/2022/04/01/23/56/bird-7105939_960_720.jpg);
+  background-image: url(https://uploads-ssl.webflow.com/620df899c73adb222e3239f2/6218db04f0ba2991d0f638c0_teaser.jpg);
   background-size: cover;
   background-position: right;
   color: #fff;
   text-align: center;
-
-  filter: grayscale(50%);
 
   & .main {
     font-size: 56px;

@@ -33,9 +33,7 @@ const ResearchPage = ({
 }: PaperListType) => {
   const theme = useTheme();
   const md = useMediaQuery(theme.breakpoints.up('md'));
-  const [value, setValue] = useState('All');
   const [data, setData] = useState();
-  const [current, setCurrent] = useState();
 
   // const theme = useTheme();
   useEffect(() => {
@@ -58,7 +56,7 @@ const ResearchPage = ({
         <Box px={2}>
           {md ? (
             <ToggleButtonGroup
-              value="All"
+              value="International Journal"
               fullWidth
               exclusive
               aria-label="outlined primary button group"
@@ -113,7 +111,7 @@ const ResearchPage = ({
               </ToggleButton>
             </ToggleButtonGroup>
           ) : (
-            <Select value="All">
+            <Select value="International Journal">
               <MenuItem value="All" component={Link} href="/publications">
                 All
               </MenuItem>
@@ -187,7 +185,10 @@ const ResearchPage = ({
 
 export const data = graphql`
   query {
-    paperList: allContentfulPublications(sort: { fields: date, order: DESC }) {
+    paperList: allContentfulPublications(
+      sort: { fields: date, order: DESC }
+      filter: { type: { eq: "International Journal" } }
+    ) {
       edges {
         node {
           id

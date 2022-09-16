@@ -59,10 +59,10 @@ export interface PaperType {
   title: string;
   type: string;
   createdAt: string;
-  option?: string[];
+  option: string[];
   url?: string;
   withPerson: string[];
-  dio?: string;
+  doi?: string;
 }
 
 export interface PaperListType {

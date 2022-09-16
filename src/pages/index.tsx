@@ -26,10 +26,10 @@ const IndexPage = ({
         <TitleSection
           title={
             <Typography variant="h6" sx={{ textAlign: 'left', lineHeight: 2 }}>
-              &nbsp;Our laboratory develop technology for handling and enhancing
-              visual data. This includes three-dimensional computer graphics,
-              computer imaging and vision, visual perception, and computational
-              aesthetics.
+              &nbsp;Our laboratory develops technology for handling and
+              enhancing visual data. This includes three-dimensional computer
+              graphics, computer imaging and vision, visual perception, and
+              computational aesthetics.
             </Typography>
           }
           subTitle="Introduction"
