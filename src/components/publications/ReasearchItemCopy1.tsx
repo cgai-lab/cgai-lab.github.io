@@ -27,7 +27,7 @@ const ResearchItem = ({
   return (
     <li>
       {url && (
-        <a href={doi ? `https://doi.org${doi}` : url}>
+        <Link to={doi ? `https://doi.org${doi}` : url} target="_blank">
           <LinkIcon
             sx={{
               width: 16,
@@ -37,7 +37,7 @@ const ResearchItem = ({
             }}
             color="primary"
           />
-        </a>
+        </Link>
       )}
       {withPerson &&
         withPerson.map((item) => <span key={item}>{item},&nbsp;</span>)}
@@ -48,50 +48,6 @@ const ResearchItem = ({
       </span>
       {option && option.map((item) => <span key={item}>,&nbsp;{item}</span>)}
       {doi && <span>,&nbsp;{doi}</span>}
-    </li>
-  );
-  return (
-    <li>
-      <Card style={{ border: 'none', boxShadow: 'none' }}>
-        <CardActionArea component={url ? Link : 'div'} to={url ? url : ''}>
-          <CardHeader
-            title={
-              <Box>
-                <TypeChip item={type} />
-                <Typography variant="h6" pl={1} pt={0.3}>
-                  {title}
-                </Typography>
-              </Box>
-            }
-            subheader={
-              <>
-                <Box pl={1}>
-                  <Box py={0.7}>
-                    <Breadcrumbs aria-label="breadcrum">
-                      {option &&
-                        option.map((item) => (
-                          <Typography key={item}>{item}</Typography>
-                        ))}
-                    </Breadcrumbs>
-                  </Box>
-                  <Box>
-                    <Typography variant="subtitle2">{date}</Typography>
-                  </Box>
-                </Box>
-                <Box>
-                  {withPerson &&
-                    withPerson.map((item) => (
-                      // <Typography key={item} component="span">
-                      //   {item}
-                      // </Typography>
-                      <PersonChip key={item} item={item} />
-                    ))}
-                </Box>
-              </>
-            }
-          />
-        </CardActionArea>
-      </Card>
     </li>
   );
 };
