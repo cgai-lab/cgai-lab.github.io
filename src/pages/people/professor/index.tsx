@@ -63,7 +63,7 @@ const AboutPage = () => {
                 Dongwann Kang
               </Typography>
               <Typography variant="body1" py={1}>
-                <b>Professor</b>, Computer Graphcis and Image Processing
+                <b>Professor</b>, Computer Graphics and Image Processing
                 Laboratory
               </Typography>
               <Typography variant="body1" py={1}>
