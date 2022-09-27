@@ -70,7 +70,9 @@ const AboutPage = () => {
                 Seoul National University of Science and Technology
               </Typography>
               <Typography variant="body1" py={1}>
-                dongwann@seoultech.ac.kr
+                <a href="mailto:dongwann@seoultech.ac.kr">
+                  dongwann@seoultech.ac.kr
+                </a>
               </Typography>
             </Box>
           }
