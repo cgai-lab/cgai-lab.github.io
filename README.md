@@ -1,6 +1,39 @@
 # [CGAI-Lab. page](https://cgai-lab.github.io/)
 
-## TODO
+## project 세팅 방법
 
-1. 모든 content들 contentful api에서 수정 가능하게
-2. 교수님 피드백 받아서 디자인 수정
+node stable 버전 설치 필요
+
+- gatsby 설치
+
+```
+  //npm
+  npm install -g gatsby-cli
+```
+
+- code clone 및 cd
+
+```
+  git clone https://github.com/cgai-lab/cgai-lab.github.io.git
+  cd cgai-lab
+```
+
+- package 설치
+
+```
+  npm i
+```
+
+- .env 파일 작성
+
+```
+  touch .env
+```
+
+GATSBY_CONTENTFUL_ACCESS_TOKEN 값을 넣어주세요.
+
+- 서버 실행
+
+```
+  -npm start
+```
