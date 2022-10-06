@@ -42,7 +42,7 @@ const Footer = () => {
             >
               TEL:
             </Typography>
-            <Typography variant="caption"> +82-2-970-6719</Typography>
+            <Typography variant="caption"> (+82)-2-970-6719</Typography>
             <br />
             <Typography
               variant="subtitle2"
@@ -50,7 +50,16 @@ const Footer = () => {
             >
               FAX:
             </Typography>
-            <Typography variant="caption"> +82-2-970-6719</Typography>
+            <Typography variant="caption"> (+82)-2-970-9734</Typography>
+            <Box>
+              <Typography
+                variant="caption"
+                component="a"
+                href="mailto:dongwann@seoultech.ac.kr"
+              >
+                dongwann@seoultech.ac.kr
+              </Typography>
+            </Box>
           </Grid>
         </Grid>
       </Container>

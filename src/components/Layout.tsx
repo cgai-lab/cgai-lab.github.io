@@ -51,7 +51,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               }}
             >
               {pages.map((page) => (
-                <NavButton key={page} to={`/${page}`}>
+                <NavButton
+                  key={page}
+                  to={`/${page}`}
+                  activeStyle={{
+                    color: '#43464d',
+                    opacity: 0.8,
+                    fontWeight: 600,
+                  }}
+                >
                   {page}
                 </NavButton>
               ))}
@@ -88,7 +96,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           >
             <List component="div" disablePadding>
               {pages.map((page) => (
-                <BottomButton key={page} to={`/${page}`}>
+                <BottomButton
+                  key={page}
+                  to={`/${page}`}
+                  activeStyle={{
+                    color: '#43464d',
+                    opacity: 0.8,
+                    fontWeight: 600,
+                  }}
+                >
                   {page}
                 </BottomButton>
               ))}

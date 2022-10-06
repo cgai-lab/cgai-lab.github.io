@@ -3,7 +3,6 @@ import React from 'react';
 
 import Layout from '@components/Layout';
 import MainSlide from '@components/main/MainSlide';
-import MainIntroSection from '@components/main/MainIntroSection';
 import { graphql } from 'gatsby';
 import { MainIntroListType } from '@types/data';
 import TitleSection from '@components/TitleSection';
@@ -54,14 +53,33 @@ const IndexPage = ({
               variant="subtitle1"
               sx={{ textAlign: 'left', lineHeight: 2 }}
             >
-              We are looking for motivated PhD students / PostDocs who are not
-              afraid to get their hands dirty. f you are interested in computer
-              graphics and vision, and are motivated and diligent, please
-              email&nbsp;
+              PostDoc position
+              <br />
+              We have an opening for a collaborative postdoctoral fellow who
+              would contribute to top quality computer graphics and imaging
+              research. Feel free to contact Prof Kang.
+              <br />
+              <br />
+              Graduate students
+              <br />
+              Please do not hesitate to contact us, if you are looking for
+              research opportunities for your MS or PhD studies on the cutting
+              edge of visual computing. We also invite international students
+              holding a BS or MS degree in computer science to apply for the
+              Global Korea Scholarship (GKS).
+              <br />
+              <br />
+              Undergraduate internship
+              <br />
+              컴퓨터 그래픽스 및 이미징 관련 연구 개발 프로젝트들에 참여하는
+              것에 관심이 있거나 본교 대학원 진학을 고려중인 학부연구생을 상시
+              모집하고 있습니다. 관심이 있으신 분들은 강동완 교수에게 메일
+              주세요.
+              <br />
+              {/* <br />
               <a href="mailto:dongwann@seoultech.ac.kr">
                 dongwann@seoultech.ac.kr
-              </a>
-              &nbsp; to discuss your potential for a career in our lab.
+              </a> */}
             </Typography>
           }
           subTitle="Open Postions"
